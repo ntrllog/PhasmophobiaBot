@@ -68,7 +68,7 @@ async def on_message(message):
                 await message.delete()
             messages_to_delete.clear()
             return
-        userInput = message.content[1:].split(' ')
+        userInput = message.content[1:].lower().split(' ')
         if len(userInput) > 3:
             await message.channel.send('Too much evidence dummy')
             return
@@ -134,4 +134,4 @@ def prettyPrint(possibilities):
         s += '\n'
     return s
 
-client.run(BOT_TOKEN)
+client.run('NzkyMjUyMDA5MTY3MzIzMTM4.X-bALg.PLRwo3ZJ1gQqQdPriePE0-i_DL4')
