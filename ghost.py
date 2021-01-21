@@ -1,4 +1,4 @@
-import discord
+import discord, os, keep_alive
 
 client = discord.Client()
 
@@ -134,4 +134,6 @@ def prettyPrint(possibilities):
         s += '\n'
     return s
 
-client.run('NzkyMjUyMDA5MTY3MzIzMTM4.X-bALg.PLRwo3ZJ1gQqQdPriePE0-i_DL4')
+keep_alive.keep_alive()
+
+client.run(os.getenv('CLIENT_TOKEN'))
