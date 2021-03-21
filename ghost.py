@@ -64,8 +64,10 @@ async def on_message(message):
             return
         if message.content == '`reset':
             for message in messages_to_delete:
-                print(message.content)
-                await message.delete()
+                try:
+                  await message.delete()
+                except:
+                  continue
             messages_to_delete.clear()
             return
         userInput = message.content[1:].lower().split(' ')
